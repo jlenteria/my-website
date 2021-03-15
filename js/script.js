@@ -32,30 +32,53 @@ function scrollFunction() {
 
 var index = 0;
 var Data = "";
+
+const title1 = "Student Management System";
+const title2 = "Motorcycle Inventory System";
+const title3 = "Products Inventory System";
+const title4 = "Personal Portfolio";
+const title5 = "Google Map Store App";
+const title6 = "CRUD Student Application";
+const title7 = "Todo App with Account";
+const title8 = "Random Mind";
+
 const cSharp1 =
-  "Add Student Information App using C sharp. You can add, view, edit and delete informations of the students.";
+  "CRUD application made of C# WinForm and SQL stored procedure database.";
 const cSharp2 =
-  "Motorcycle Inventory using C sharp. You can add, delete, edit, view and select motorcycles.";
+  "Inventory system made of C# WPF and SQL stored procedure database.";
 const cSharp3 =
-  "Products Inventory System using C sharp. It has different categories of products where you can see Dashboard, Perform, View and Update Inventory.";
+  "Inventory System using C#. It has different categories of products where you can see Dashboard, Perform, View and Update Inventory.";
 const website =
   "This is my Personal Website made of HTML, CSS with a few codes of Javascript.";
-const googleMap =
-  "Google Map Store. This application is also made of HTML, CSS and Javascript.";
+const googleMap = "This application is also made of HTML, CSS and Javascript.";
 const studentApp =
-  "Add Student Application. This website application is made of Javascript and CSS with React Js framework. This is an CRUD react application.";
+  "This website application is made of Javascript and CSS with React Js framework. This is an CRUD react application.";
 const todoApp =
-  "Todo app with account. This is a todo application that has an account. It used Reactjs, Nodejs and Mongodb.";
+  "This is a todo application that has an account. It used Reactjs, Nodejs and Mongodb.";
 const randomMind =
   "This website is like a social media site, you can share your thoughts here, you can like and comment posts. This is made of reactjs and nodejs with mongodb database. I am currently developing this site.";
 //links
-const studentLink = "https://github.com/jlenteria/student-information-csharp";
-const motorInventoryLink = "https://github.com/jlenteria/Motor-Inventory";
-const productInventoryLink = "https://github.com/jlenteria/Products-Inventory";
+const studentLink =
+  "https://github.com/jlenteria98/Student-Management-System-SQL";
+const motorInventoryLink =
+  "https://github.com/jlenteria98/Motor-Inventory-Csharp";
+const productInventoryLink =
+  "https://github.com/jlenteria98/product-inventory-Csharp";
 const websiteLink = "https://bonfox.netlify.app/";
-const mapLink = "https://github.com/jlenteria/Store-Locator-with-Google-Maps";
-const studentAppLink = "https://github.com/jlenteria/person-information-system";
 const todoAppLink = "https://bonfox-todo.herokuapp.com/";
+
+var title = [
+  "",
+  title1,
+  title2,
+  title3,
+  "",
+  title4,
+  title5,
+  title6,
+  title7,
+  title8,
+];
 
 var sentence = [
   "",
@@ -71,7 +94,7 @@ var sentence = [
 ];
 var img = [
   "",
-  "img/student-information.jpg",
+  "img/studentmanagement.png",
   "img/motorcycle-inventory.jpg",
   "img/product-inventory.jpg",
   " ",
@@ -89,8 +112,8 @@ var link = [
   productInventoryLink,
   "",
   websiteLink,
-  mapLink,
-  studentAppLink,
+  "",
+  "",
   todoAppLink,
   "",
 ];
@@ -107,14 +130,17 @@ function prev() {
       document.querySelector(".prev").style.opacity = "0.2";
       document.querySelector(".prev").style.cursor = "not-allowed";
     }
-    if (index != 5 && index != 8) {
-      linkContent = "Visit on Github";
+    if (index == 6 || index == 7) {
+      linkContent = "";
+    } else if (index != 5 && index != 8) {
+      linkContent = " <i class='fa fa-code'> Get Code</i>";
     } else {
       linkContent = "<i class='fa fa-eye'> Live Demo</i>";
     }
     Data = `<div style = "display: block;">
         <img src = ${img[index]}  text-align: center;">
-        <p  style = "padding-top: 20px;">${sentence[index]}</p>
+        <p style="color:rgba(145, 10, 242, 0.8)" ><Strong>${title[index]}</p>
+        <p  style = "padding-top:10px;font-size: 15px; font-weight: normal">${sentence[index]}</p>
         <a href='${link[index]}' target='_blank'><strong> ${linkContent}</strong></a>
 
         </div>`;
@@ -125,8 +151,8 @@ function prev() {
                 <source src = "img/thesis.mp4" type="video/mp4">
             </video>
             <br>
-            <p>Game using Innovative Mechanical Inputs and Kinetics (GIMIK) </p>
-            <p style = "font-size: 12px;">This is our THESIS project which is a real-time game application using Java and Arduino. This game will give you not only for fun but also you can charge your mobile phone for your reward and also there are other reward if you win the game. I'm the only one who program the application of our thesis.</p>
+            <p style="color:rgba(145, 10, 242, 0.8)" ><Strong>Game using Innovative Mechanical Inputs and Kinetics (GIMIK)</Strong> </p>
+            <p style = " font-size: 15px; font-weight: normal">This is our THESIS project which is a real-time game application using Java and Arduino. This game will give you not only for fun but also you can charge your mobile phone for your reward and also there are other reward if you win the game. I'm the only one who program the application of our thesis.</p>
             </div>`;
     }
     if (index == 4) {
@@ -135,8 +161,8 @@ function prev() {
                 <source src = "img/ObstacleBot.mp4" type="video/mp4">
             </video>
             <br><br>
-            <p>Obstacle Avoiding Robot </p>
-            <p style = "font-size: 12px;">This project is made of Arduino.</p>
+            <p style="color:rgba(145, 10, 242, 0.8); font-size: 15px" ><Strong>Obstacle Avoiding Robot</p>
+            <p style = "font-size: 12px; font-weight: normal">This project is made of Arduino.</p>
             </div>`;
     }
     workSentence.innerHTML = Data;
@@ -153,17 +179,18 @@ function next() {
       document.querySelector(".next").style.opacity = "0.2";
       document.querySelector(".next").style.cursor = "not-allowed";
     }
-    if (index == 9) {
+    if (index == 9 || index == 6 || index == 7) {
       linkContent = "";
     } else if (index != 5 && index != 8) {
-      linkContent = "Visit on Github";
+      linkContent = " <i class='fa fa-code'> Get Code</i>";
     } else {
       linkContent = "<i class='fa fa-eye'> Live Demo</i>";
     }
 
     Data = `<div style = "display: block;">
         <img src = ${img[index]}  text-align: center;" >
-        <p  style = "padding-top: 20px;">${sentence[index]}</p>
+        <p style="color:rgba(145, 10, 242, 0.8)" ><Strong>${title[index]}</p>
+        <p  style = "padding-top: 10px; font-size: 15px; font-weight: normal;">${sentence[index]}</p>
         <a href='${link[index]}' target='_blank'><strong>${linkContent}<strong></a>
 
         </div>`;
@@ -173,8 +200,8 @@ function next() {
                 <source src = "img/ObstacleBot.mp4" type="video/mp4">
             </video>
             <br><br>
-            <p>Obstacle Avoiding Robot </p>
-            <p style = "font-size: 12px;">This project is made of Arduino.</p>
+            <p style="color:rgba(145, 10, 242, 0.8)" ><Strong>Obstacle Avoiding Robot</p>
+            <p style = "font-size: 15px; font-weight: normal">This project is made of Arduino.</p>
             </div>`;
     }
   }

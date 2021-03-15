@@ -129,7 +129,7 @@ li a:hover::before {
   margin-top: 50px;
   display: block;
   background: transparent;
-  height: 700px;
+  height: 95vh;
 }
 
 .cv button a:hover {
