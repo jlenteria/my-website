@@ -314,6 +314,7 @@ li a:hover::before {
   border-radius: 20px;
   color: white;
   margin-bottom: 140px;
+  max-height: 700px;
 }
 .latest-work-elements-1 video {
   width: 100%;
@@ -489,6 +490,7 @@ h2 {
   .latest-work-elements-1 {
     width: 100%;
     padding: 20px;
+    max-height: 700px;
   }
   .latest-work-elements-1 video {
     width: 100%;
@@ -632,6 +634,7 @@ h2 {
   .latest-work-elements-1 {
     width: 100%;
     padding: 20px;
+    max-height: 700px;
   }
   .latest-work-elements-1 video {
     width: 100%;
