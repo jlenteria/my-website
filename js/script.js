@@ -64,7 +64,7 @@ const motorInventoryLink =
   "https://github.com/jlenteria98/Motor-Inventory-Csharp";
 const productInventoryLink =
   "https://github.com/jlenteria98/product-inventory-Csharp";
-const websiteLink = "https://bonfox.netlify.app/";
+const websiteLink = "https://bcodezzz.netlify.app/";
 const todoAppLink = "https://bonfox-todo.herokuapp.com/";
 
 var title = [
