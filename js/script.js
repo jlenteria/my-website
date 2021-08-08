@@ -40,7 +40,6 @@ const title4 = "Personal Portfolio";
 const title5 = "Google Map Store App";
 const title6 = "CRUD Student Application";
 const title7 = "Todo App with Account";
-const title8 = "Random Mind";
 
 const cSharp1 =
   "CRUD application made of C# WinForm and SQL stored procedure database.";
@@ -77,7 +76,6 @@ var title = [
   title5,
   title6,
   title7,
-  title8,
 ];
 
 var sentence = [
@@ -90,7 +88,6 @@ var sentence = [
   googleMap,
   studentApp,
   todoApp,
-  randomMind,
 ];
 var img = [
   "",
@@ -98,11 +95,10 @@ var img = [
   "img/motorcycle-inventory.jpg",
   "img/product-inventory.jpg",
   " ",
-  "img/website.png",
+  "img/my-website.png",
   "img/google-store.png",
   "img/student-app.png",
   "img/todo.png",
-  "img/randommind.png",
 ];
 
 var link = [
@@ -115,7 +111,6 @@ var link = [
   "",
   "",
   todoAppLink,
-  "",
 ];
 
 var linkContent = "";
