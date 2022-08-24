@@ -265,69 +265,49 @@ li a:hover::before {
   padding-top: 20px;
   margin: auto;
   width: 85%;
-}
-.work {
-  margin-top: 50px;
-  padding-bottom: 10px;
+  padding-bottom: 100px;
 }
 .latest-works {
-  display: block;
-  background: transparent;
+  background: #DED6D6;
+  margin: 0;
+  padding: 60px 0px;
 }
-
-.latest-works-1 {
+.latest-works .latest-works-container{
+  width: 85%;
   margin: 0 auto;
-  width: 60%;
   display: flex;
-  justify-content: space-around;
-  min-height: 800px;
+  justify-content:  space-around;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-.next,
-.prev {
-  margin: auto 0;
-  padding: 10px 15px;
-  background-color: rgba(207, 164, 45, 0.329);
+.latest-works .latest-works-container .d-block{
+  width: 510px;
+  background: white;
+  box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.6);
+  padding: 20px 25px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.latest-works .latest-works-container p{
+  font-size: 18px;
+  font-weight: bold;
+}
+.latest-works .latest-works-container a{
+  font-size: 35px;
+  font-weight: bold;
+}
+.latest-works .latest-works-container img{
+  width: 90px;
+  height: 90px;
+  margin-right: 30px;
+  background: black;
+  padding: 2px;
   border-radius: 50%;
 }
-.prev {
-  opacity: 0.2;
-  cursor: not-allowed;
-  margin-right: 10px;
-  margin-left: 5px;
-}
-.next {
-  cursor: pointer;
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-.latest-works-1 h2 {
-  color: black;
-}
-
-.latest-work-elements-1 {
-  width: 100%;
-  margin: 80px auto 0 auto;
-  background: #daedbd;
-  padding: 30px;
-  text-align: center;
-  border-radius: 20px;
-  color: white;
-  margin-bottom: 140px;
-  max-height: 700px;
-}
-.latest-work-elements-1 video {
-  width: 100%;
-  max-height: 500px;
-}
-.latest-work-elements-1 img {
-  max-height: 500px;
-  width: 100%;
-}
-.latest-work-elements-1 p {
-  color: black;
-}
-
 .drop-message {
   background: #ffffff;
   padding-bottom: 100px;
@@ -477,27 +457,6 @@ h2 {
   .hr-element {
     display: none;
   }
-  .latest-works-1 {
-    width: 100%;
-    height: auto;
-    padding: 0;
-  }
-  .latest-works {
-    width: 100%;
-    height: auto;
-  }
-
-  .latest-work-elements-1 {
-    width: 100%;
-    padding: 20px;
-    max-height: 700px;
-  }
-  .latest-work-elements-1 video {
-    width: 100%;
-  }
-  .latest-work-elements-1 img {
-    width: 100%;
-  }
   .drop-message-1 {
     width: 90%;
   }
@@ -614,33 +573,6 @@ h2 {
   }
   .hr-element {
     display: none;
-  }
-  .latest-works-1 {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    min-height: 600px;
-  }
-  .next,
-  .prev {
-    padding: 10px;
-  }
-  .latest-works {
-    margin: 0;
-    width: 100%;
-    height: auto;
-  }
-
-  .latest-work-elements-1 {
-    width: 100%;
-    padding: 20px;
-    max-height: 700px;
-  }
-  .latest-work-elements-1 video {
-    width: 100%;
-  }
-  .latest-work-elements-1 img {
-    width: 100%;
   }
   .drop-message-1 {
     width: 90%;
