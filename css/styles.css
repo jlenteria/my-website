@@ -245,6 +245,20 @@ li a:hover::before {
   width: 85%;
 }
 
+.about-view #media {
+  width:35px; 
+  height: 35px;
+  text-align: center;
+  padding-top: 5px; 
+  margin-right: 20px; 
+  border: 1px solid gray; 
+  border-radius:50%;
+}
+.about-view #media i {
+  font-size: 17px;
+}
+
+
 #media:hover {
   background: #000000;
   cursor: pointer;
