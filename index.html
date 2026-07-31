@@ -1,522 +1,559 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Jonel T. Lenteria</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="img/profile.png" />
-  <script src="js/script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <!-- Third party plugin JS-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jonel T. Lenteria — Fullstack Developer</title>
+<meta name="description" content="Jonel T. Lenteria is a fullstack developer based in Cebu, Philippines, building web, mobile and desktop software with Ruby on Rails, React, Vue, C#/.NET and Flutter.">
+<meta name="author" content="Jonel T. Lenteria">
+<meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://jlenteria.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jonel T. Lenteria — Fullstack Developer">
+<meta property="og:description" content="Fullstack developer based in Cebu, Philippines. Web, mobile and desktop software since 2020.">
+<meta property="og:image" content="img/opt/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jonel T. Lenteria — Fullstack Developer">
+<meta name="twitter:description" content="Fullstack developer based in Cebu, Philippines. Web, mobile and desktop software since 2020.">
+<meta name="twitter:image" content="img/opt/og-image.jpg">
+
+<link rel="icon" href="img/opt/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/opt/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/opt/avatar-440.jpg" imagesrcset="img/opt/avatar-440.jpg 1x, img/opt/avatar-880.jpg 2x">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="css/styles.css">
+
+<script>
+  // Runs before first paint so the theme never flashes.
+  (function () {
+    var el = document.documentElement;
+    el.classList.remove('no-js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t !== 'light' && t !== 'dark') {
+        t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      el.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+<script src="js/script.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jonel T. Lenteria",
+  "jobTitle": "Fullstack Developer",
+  "email": "mailto:lenteria.jonel@gmail.com",
+  "telephone": "+639762023455",
+  "url": "https://jlenteria.com/",
+  "address": { "@type": "PostalAddress", "streetAddress": "Brgy. Jugan", "addressLocality": "Consolacion", "addressRegion": "Cebu", "postalCode": "6000", "addressCountry": "PH" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Cebu — Banilad" },
+  "sameAs": [
+    "https://github.com/jlenteria",
+    "https://www.linkedin.com/in/jonel-lenteria-6068a3141/"
+  ]
+}
+</script>
 </head>
+
 <body>
-    <div class="navigation-bar" id='nav'>
-      <a class="navbar-brand"  id = "brand" style = "font-weight: bold; font-size: 20px;" href = "#">JL</a>
-          <label for="toggle" class="tag">&#9776;</label>
-          <input type="checkbox" name="" id="toggle">
-        <ul id = 'ul'>
-            <li><a id = "home" href="#">HOME</a></li>
-            <li><a id = "about" href="#about-view">ABOUT</a></li>
-            <li><a id = "services" href="#myservices-view">SERVICES</a></li>
-            <li><a id = "works" href="#my-works">WORKS</a></li>
-            <li><a  id = "contact" href="#drop-message">CONTACT</a></li>
-            
-        </ul>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Icon sprite: inline so icons cost zero network requests. -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m3.5 7.5 8.5 6 8.5-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.686 7-11a7 7 0 1 0-14 0c0 5.314 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2.5"/><path d="M3.5 10h17M8 3v4m8-4v4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 8-4.5 4 4.5 4m7-8 4.5 4-4.5 4M13.8 5l-3.6 14"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.8 18.4h2.4"/></symbol>
+  <symbol id="i-desktop" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.8"/><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M9.5 1.8v1.7m5-1.7v1.7m-5 19v-1.7m5 1.7v-1.7M22.2 9.5h-1.7m1.7 5h-1.7m-19-5h1.7m-1.7 5h1.7"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="4.7" r="2.7"/><circle cx="5" cy="19.3" r="2.7"/><circle cx="19" cy="19.3" r="2.7"/><path d="M10.8 7.1 6.2 16.9m11.6 0L13.2 7.1M7.7 19.3h8.6"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3.8" width="18" height="7" rx="2.2"/><rect x="3" y="13.2" width="18" height="7" rx="2.2"/><path d="M7 7.3h.01M7 16.7h.01"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.8" rx="7.5" ry="3.2"/><path d="M4.5 5.8v12.4c0 1.77 3.36 3.2 7.5 3.2s7.5-1.43 7.5-3.2V5.8"/><path d="M4.5 12c0 1.77 3.36 3.2 7.5 3.2s7.5-1.43 7.5-3.2"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3a5.5 5.5 0 0 0-5 7.7L3.4 17.8a2 2 0 0 0 2.8 2.8l7.1-7.1A5.5 5.5 0 0 0 20.4 6l-2.8 2.8-2.4-2.4L18 3.6A5.5 5.5 0 0 0 15.5 3Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6m11 11 1.6 1.6M19.1 4.9l-1.6 1.6m-11 11-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.7 8.7 0 1 0 10.7 10.7Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v15m0 0 6-6m-6 6-6-6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7m0 0H8m9 0v9"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8 21 3Z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+</svg>
+
+<div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+
+<header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="Jonel T. Lenteria — back to top">
+      <span class="brand-mark" aria-hidden="true">JL</span>
+      <span class="brand-text">Jonel<span class="brand-dot">.</span></span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#top" data-nav-link>Home</a></li>
+        <li><a href="#about" data-nav-link>About</a></li>
+        <li><a href="#skills" data-nav-link>Skills</a></li>
+        <li><a href="#services" data-nav-link>Services</a></li>
+        <li><a href="#work" data-nav-link>Work</a></li>
+        <li><a href="#contact" data-nav-link>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch to light theme">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-shut" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
     </div>
-    <div class="banner-view" data-aos='fade-down'>
-      <div class="picture-container" >
-        <img src="img/mypic.jpg"  alt="">
-      </div>
-      <div class="banner-info-container">
-        <h1 class = "text-center" style = "color: white; font-weight: bold; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif" data-aos="fade-right">Hi, I'm Jonel T. Lenteria</h1>
-        <p class="text-center" style = "color: rgba(255, 255, 255, 0.8); font-weight: bold; font-size: 18px;" data-aos="fade-left">Fullstack Developer</p>
-        <div class = 'btn-banner text-center'>
-          <a  href="index.html#my-works" class="btn btn-outline-warning" width="100%">MY WORK</a>
-        </div>
+  </div>
+</header>
+<div class="nav-scrim" data-nav-scrim aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- ───────────────────────── Hero ───────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <span class="grid"></span>
+    </div>
+
+    <div class="shell hero-inner">
+      <p class="eyebrow" data-reveal>
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for freelance work
+      </p>
+
+      <figure class="avatar" data-reveal>
+        <img src="img/opt/avatar-440.jpg"
+             srcset="img/opt/avatar-440.jpg 440w, img/opt/avatar-880.jpg 880w"
+             sizes="(max-width: 640px) 148px, 200px"
+             width="440" height="440" fetchpriority="high" decoding="async"
+             alt="Portrait of Jonel T. Lenteria">
+      </figure>
+
+      <h1 class="hero-title" data-reveal>
+        <span class="line">Hi, I'm <span class="grad">Jonel Lenteria</span></span>
+      </h1>
+
+      <p class="hero-role" data-reveal>
+        <span class="rotator" data-rotator
+              data-words="Fullstack Developer,Ruby on Rails Engineer,React &amp; Vue Developer,Mobile App Builder">Fullstack Developer</span><span class="caret" aria-hidden="true"></span>
+      </p>
+
+      <p class="hero-sub" data-reveal>
+        Computer Engineering graduate building web, mobile and desktop software
+        from Cebu, Philippines &mdash; shipping production apps since 2020.
+      </p>
+
+      <div class="hero-cta" data-reveal>
+        <a class="btn btn-primary" href="#work">
+          View my work
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contact">
+          Get in touch
+          <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+        </a>
       </div>
 
+      <ul class="socials" data-reveal>
+        <li><a href="https://github.com/jlenteria" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/jonel-lenteria-6068a3141/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+      </ul>
     </div>
-    <div class="about-view" id="about-view">
-      <div class = "about-vieww" >
-        <h2 style = "font-weight: bold; color: rgba(0, 0, 0, 0.8); padding: 60px 0 0 0;" data-aos="fade-right">About Me</h2>
-        <hr data-aos="fade-right"/>
-        <br>
-        <div class="about-info-container">
-          <div class="description-container"  data-aos="fade-right">
-            <h3 style = "color: black">About Me</h3>
-            <br>
-            <p>
-                I am a Computer Engineering graduate at the University of Cebu Banilad campus. I am from Bohol and now I currently live in Cebu. I been working as a Fullstack Developer since 2020, I am a person that have a lot of skills especially in programming.
-            </p>
-            <p>
-              I am a fast learner person and willing to do any kind of tasks and I am a self-taught Fullstack Developer. 
-            </p><br>
-            <div class="contact-info">
-                <div class="contact-info-1">
-                  <div>
-                    <i class="fa fa-envelope" style="font-size: 17px;"></i>
-                    <span style="font-size: 14px; font-weight: bold;">Email:</span> <span style = "font-size: 14px; color: gray;"> lenteria.jonel@gmail.com</span>  
-                  
-                  </div>
-                  <div style="padding-top:10px;">
-                    <i class="fa fa-calendar" id = "birth" style="font-size: 17px;"></i>
-                    <span style="font-size: 14px; font-weight: bold;">Date of birth:</span> <span style = "font-size: 14px; color: gray;"> March 6,1998</span>    
-                  </div>
-                  <div style="padding-top:10px;">
-                    <i class="fa fa-calendar" id = "birth" style="font-size: 17px;"></i>
-                    <span style="font-size: 14px; font-weight: bold;">Github:</span><a href="https://github.com/jlenteria" style="font-size: 14px;" target="_blank"> https://github.com/jlenteria</a> 
-                  </div>
-        
-               </div>
-               <div class="contact-info-2">
-                <div>
-                  <i class="fa fa-map-marker" style="font-size: 17px;"></i>
-                  <span style="font-size: 14px; font-weight: bold;">Location:</span> <span style = "font-size: 14px; color: gray;">Leysonville, Talamban, Cebu City, Cebu</span>  
-                </div>
-                <div style="padding-top:10px;">
-                  <i class="fa fa-phone" id = "birth" style="font-size: 17px;"></i>
-                  <span style="font-size: 14px; font-weight: bold;">Phone:</span> <span style = "font-size: 14px; color: gray;">+639764862324</span>    
-                </div>
 
-              </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to about section">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+    </a>
+  </section>
+
+  <!-- ───────────────────────── About ───────────────────────── -->
+  <section class="section" id="about">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <p class="section-kicker">01 &mdash; About</p>
+        <h2 class="section-title">A bit about me</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-copy" data-reveal>
+          <p class="lead">
+            I'm a Computer Engineering graduate of the University of Cebu &mdash; Banilad campus.
+            I'm originally from Bohol and now based in Cebu, where I've been working as a
+            fullstack developer since 2020.
+          </p>
+          <p>
+            I'm largely self-taught, I pick things up fast, and I'm comfortable moving across the
+            whole stack &mdash; from database schema and API design through to the interface people
+            actually touch. I'm happy to take on unfamiliar problems and figure them out.
+          </p>
+
+          <dl class="facts">
+            <div class="fact">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</dt>
+              <dd><a href="mailto:lenteria.jonel@gmail.com">lenteria.jonel@gmail.com</a></dd>
             </div>
-            <div style="display: flex; margin-top: 40px; margin-bottom: 50px;">
-              <a id="media" class="effect" href = "https://www.facebook.com/jllenteria" target="_blank">
-                <i class="fa fa-facebook"></i>
-              </a>
-              <a id="media" class="effect" href = "https://twitter.com/jlenteria98" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-              <a id="media" class="effect" href = "https://www.linkedin.com/in/jonel-lenteria-6068a3141/" target="_blank">
-                <i class="fa fa-linkedin"></i>
-              </a>
-              <a id="media" class="effect" href = "https://www.instagram.com/jlenteria98/" target="_blank">
-                <i class="fa fa-instagram"></i>
-              </a>
-              <a id="media" class="effect" href = "https://github.com/jlenteria" target="_blank">
-                <i class="fa fa-github"></i>
-              </a>
+            <div class="fact">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Location</dt>
+              <dd>Brgy. Jugan, Consolacion, Cebu 6000</dd>
             </div>
-            
-          </div>
-          <div class = "percentage"  data-aos="fade-left">
-            <div style="display: inline;">
-              <span>HTML & CSS</span>
-              <span style="float: right; padding-right: 5px;">100%</span>
+            <div class="fact">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Phone</dt>
+              <dd><a href="tel:+639762023455">0976 202 3455</a></dd>
             </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 100%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style=" background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="fact">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> Born</dt>
+              <dd><time datetime="1998-03-06">March 6, 1998</time></dd>
             </div>
-            <br>
-            <div style="display: inline;">
-              <span>Javascript</span>
-              <span style="float: right; padding-right: 5px;">80%</span>
+            <div class="fact">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> GitHub</dt>
+              <dd><a href="https://github.com/jlenteria" target="_blank" rel="noopener">github.com/jlenteria</a></dd>
             </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 80%"  data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>ReactJs</span> 
-              <span style="float: right; padding-right: 5px;">40%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 40%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>C#</span>
-              <span style="float: right; padding-right: 5px;">50%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 50%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>.NET</span>
-              <span style="float: right; padding-right: 5px;">50%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 50%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>Android</span>
-              <span style="float: right; padding-right: 5px;">50%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 50%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>ExpressJs</span>
-              <span style="float: right; padding-right: 5px;">75%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 75%" data-aos="fade-right" data-aos-delay="800" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>MongoDB</span>
-              <span style="float: right; padding-right: 5px;">50%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 50%"   data-aos="fade-right" data-aos-delay="700" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>SQL</span>
-              <span style="float: right; padding-right: 5px;">80%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 80%"   data-aos="fade-right" data-aos-delay="700" role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>Ruby On Rails</span>
-              <span style="float: right; padding-right: 5px;">90%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 90%" data-aos="fade-right" data-aos-delay="700"  role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>PostgreSQL</span>
-              <span style="float: right; padding-right: 5px;">82%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 82%" data-aos="fade-right" data-aos-delay="700"  role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>AngularJS</span>
-              <span style="float: right; padding-right: 5px;">75%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 75%" data-aos="fade-right" data-aos-delay="700"  role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>VueJS</span>
-              <span style="float: right; padding-right: 5px;">75%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 75%" data-aos="fade-right" data-aos-delay="700"  role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <br>
-            <div style="display: inline;">
-              <span>Flutter</span>
-              <span style="float: right; padding-right: 5px;">75%</span>
-            </div>
-            <div class="progress" style = "height: 7px; margin-top:5px;">
-              <div class="progress-bar" style="width: 75%" data-aos="fade-right" data-aos-delay="700"  role="progressbar" style="background: #2C3E50;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
+          </dl>
         </div>
-    </div>
-    <div class="myservices-view " id="myservices-view">
-      <div  class = "myservices-view-1">
-        <h2 style = "font-weight: bold; color: rgba(0, 0, 0, 0.8); padding: 40px 0 0 0;" data-aos="fade-right">My Services</h2>
-        <hr data-aos="fade-right"/>
-          <div class="services-elements">
-            <div class="services-elements-inside" data-aos="zoom-in-right">
-              <a class="effect">
-                <i class="fa fa-html5 effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Web Development</h4>
-              <hr/>
-              <p>I have experienced in making any kind of websites using HTML, CSS, Bootstrap, TailwindCSS, Reactjs, AngularJS, VueJS, Expressjs, Ruby on Rails, SQL, MongoDB and PostreSQL.</p>
-            </div>
-            <div class="vertical"></div>
-            <div class="services-elements-inside" data-aos="zoom-in-down"> 
-              <a class="effect">
-                <i class="fa fa-mobile effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Mobile Development</h4>
-              <hr />
-              <p>I have experienced in making android applications using Kotlin, Java, and Flutter with RESTFUL API.</p>
-            </div>
-            <div class="vertical"></div>
 
-            <div class="services-elements-inside" data-aos="zoom-in-left">
-              <a class="effect">
-                <i class="fa fa-laptop effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Destkop Development</h4>
-              <hr />
-              <p>I can do also desktop development using C# .NET Framework and .NET Core with MSSQL.</p> 
-            </div>
+        <aside class="about-side" data-reveal>
+          <div class="card stat-card" data-spotlight>
+            <span class="stat-num" data-count="5" data-suffix="+">5+</span>
+            <span class="stat-label">Years building software</span>
           </div>
-          <div class="hr-element">
-            <hr/>
+          <div class="card stat-card" data-spotlight>
+            <span class="stat-num" data-count="10" data-suffix="+">10+</span>
+            <span class="stat-label">Shipped projects</span>
           </div>
-          <div class="services-elements-2">
-            <div class="services-elements-inside" data-aos="zoom-in-right">
-              <a class="effect">
-                <i class="fa fa-laptop effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Computer Hardware</h4>
-              <hr />
-              <p>I have knowledge on different computer hardware. I'm not an expert but I can fix and troubleshoot any computer malicious.</p>
-            </div>
-            <div class="vertical"></div>
-            <div class="services-elements-inside" data-aos="zoom-in-down"> 
-              <a class="effect">
-                <i class="fa fa-microchip effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Arduino, Raspberry pi, Orange pi</h4>
-              <hr />
-              <p>I have experienced making bots and android application integration with arduino. I have created sumobot, line follower and realtime arcade game with android app using arduino. Also I have experienced integrating an operation system to rpi and opi for piso wifi vending machines.</p>
-            </div>
-            <div class="vertical"></div>
-
-            <div class="services-elements-inside" data-aos="zoom-in-left">
-              <a class="effect">
-                <i class="fa fa-cloud effect" style="font-size: 50px; color: rgba(221, 66, 19, 0.8);"></i>
-              </a>
-              <h4 style="color: rgba(0,0,0,0.8); margin-top: 20px; ">Routing & Switching</h4>
-              <hr />
-              <p>I have knowledge also on routing and switching. I know how to configure router and switch with IP addresses. And I have done many courses about routing & switching during my study.</p> 
-            </div>
+          <div class="card stat-card" data-spotlight>
+            <span class="stat-num" data-count="6" data-suffix="">6</span>
+            <span class="stat-label">Service areas</span>
           </div>
-        </div>
+          <div class="card stat-card" data-spotlight>
+            <span class="stat-num" data-count="20" data-suffix="+">20+</span>
+            <span class="stat-label">Technologies used</span>
+          </div>
+        </aside>
       </div>
     </div>
-    <div class="latest-works work" id="my-works" >
-      <h2 style = "font-weight: bold; padding: 65px 0 0 0;" data-aos="fade-right">My Works</h2>
-      <hr data-aos="fade-right"/>
-      <div class="latest-works-container">
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/header-logo.png">
-            <div style="display: block">
-              <p>
-                Flarego Technologies Corp. Website
-              </p>
-              <div class="d-flex">
-                <a href="https://flarego.ph/" class="text-dark" target="_blank">
-                  <i class="fa fa-globe"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is the official website of our company, I developed this from the scratch using Ruby on Rails.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/dafoxtech.png">
-            <div style="display: block">
-              <p>
-                Dafoxtech Eloading System
-              </p>
-              <div class="d-flex">
-                <a href="https://dafoxtech.com/" class="text-dark" target="_blank">
-                  <i class="fa fa-globe"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is another website of our company, this is all about Eloading System. I developed the front end from scratch using Ruby on Rails.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/todo-angularjs.png">
-            <div style="display: block">
-              <p>
-                Todo App - AngularJS
-              </p>
-              <div class="d-flex">
-                <a  href="https://github.com/jlenteria/Todo-App-AngularJS" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is an CRUD application using AngularJS and PostgreSQL. It has login and register form.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/student-app.png">
-            <div style="display: block">
-              <p>
-                Student App
-              </p>
-              <!-- <div class="d-flex">
-                <a  style="pointer-events: none;" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div> -->
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is an CRUD application using MERN stack. You can add, delete, edit student data.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/studentmanagement.png">
-            <div style="display: block">
-              <p>
-                Student Management
-              </p>
-              <div class="d-flex">
-                <a href="https://github.com/jlenteria/Student-Management-System-SQL" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is a desktop application using c# and sql database. It is a student management system.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/product-inventory.jpg">
-            <div style="display: block">
-              <p>
-                Product Inventory
-              </p>
-              <div class="d-flex">
-                <a  href ="https://github.com/jlenteria/product-inventory-Csharp" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is a desktop application using c#. It is an inventory management system, you can add, delete and edit products.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/todo.png">
-            <div style="display: block">
-              <p>
-                Todo App - ReactJS
-              </p>
-              <div class="d-flex">
-                <a  href="https://github.com/jlenteria/mern-todo" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is an CRUD application using MERN stack. You can add, delete, edit student data. It has also login and register form.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/motorcycle-inventory.jpg">
-            <div style="display: block">
-              <p>
-                Motorcycle Inventory System
-              </p>
-              <div class="d-flex">
-                <a  href="https://github.com/jlenteria/Motor-Inventory-Csharp" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is a desktop application using C#. You can add, edit and delete motorcycles.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/diffused.png">
-            <div style="display: block">
-              <p>
-                Diffuse The Bomb
-              </p>
-              <div class="d-flex">
-                <a  href="https://github.com/jlenteria/diffused-the-bomb-xamarin" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is an android application using xamarin. It is a game about diffusing the bomb.
-          </div>
-        </div>
-        <div class="d-block services-elements-inside" data-aos="zoom-in-up">
-          <div class="d-flex align-items-center">
-            <img src="img/capture.png">
-            <div style="display: block">
-              <p>
-                Capture Image App
-              </p>
-              <div class="d-flex">
-                <a  href="https://github.com/jlenteria/capture-app_android_to_pc-SmbClient" target="_blank" class="mr-3 text-dark">
-                  <i class="fa fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="description mt-4">
-            This is an android application using Kotlin. Basically, this app performs capturing from your android then automatically save it to your windows public shared folder using SMBClient.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="drop-message " id="drop-message">
-      <h2 style = "font-weight: bold;color: rgba(0, 0, 0, 0.8); padding-top: 60px;" data-aos="fade-right">Drop me a Message</h2>
-      <hr data-aos="fade-right"/>
-      <div class="drop-message-1" data-aos="fade-left">
-        <div class="text-left message-header" style="margin-top: 30px; background: #FFFFFF">
-          <form name="contact" method="POST" data-netlify="true" class="message-form">
-            <input type="text" name="name" value="" placeholder="Name" required autocomplete="off">
-            <input type="email" name="mail" value="" placeholder="E-mail" required >
-            <input type="text" name="subject" value="" placeholder="Subject" required autocomplete="off">
-            <textarea class="textarea" name="message" rows="8" cols="104" placeholder="Your message ..." required></textarea>
-            <button type="submit" name = "submit" class="btn btn-success mt-3">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="up-footer ">
-      <div class="up-footer-view"  data-aos="fade-left">
-        <p style="color: gray; font-weight: bold;">I am available for freelance projects.</p>
-        <h2 style="color: black; font-weight: bold;">Let's work together indeed!</h2>
-        <div class="button" style="padding: 20px;">
-          <a href="index.html#drop-message" class="btn btn-primary mr-4">GET QUOTES</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <footer style="padding-top: 62px;">
-        <p style="color: #AEB6BF;" id="footer-id" ></p>
-      </footer>
-    </div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-          duration: 1200,
-        });
-    </script>
+  </section>
 
-    <script>
-      document.getElementById("footer-id").textContent = "© " + new Date().getFullYear() + " Personal Website  |  Design by Jonel Lenteria";
-    </script>
+  <!-- ───────────────────────── Skills ───────────────────────── -->
+  <section class="section section-alt" id="skills">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <p class="section-kicker">02 &mdash; Stack</p>
+        <h2 class="section-title">Technologies I work with</h2>
+        <p class="section-sub">Grouped by where they sit in the stack.</p>
+      </header>
+
+      <div class="skill-grid">
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> Frontend</h3>
+          <ul class="pills">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li>
+            <li>Vue.js</li><li>AngularJS</li><li>Tailwind CSS</li><li>Bootstrap</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg> Backend</h3>
+          <ul class="pills">
+            <li>Ruby on Rails</li><li>Node.js</li><li>Express.js</li><li>C#</li>
+            <li>.NET Framework</li><li>.NET Core</li><li>REST APIs</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg> Mobile</h3>
+          <ul class="pills">
+            <li>Flutter</li><li>Kotlin</li><li>Java</li><li>Android SDK</li><li>Xamarin</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-database"/></svg> Databases</h3>
+          <ul class="pills">
+            <li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>MongoDB</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg> Hardware &amp; IoT</h3>
+          <ul class="pills">
+            <li>Arduino</li><li>Raspberry Pi</li><li>Orange Pi</li><li>Robotics</li>
+          </ul>
+        </article>
+
+        <article class="card skill-card" data-reveal data-spotlight>
+          <h3 class="skill-head"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg> Networking</h3>
+          <ul class="pills">
+            <li>Routing</li><li>Switching</li><li>IP addressing</li><li>Troubleshooting</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Services ───────────────────────── -->
+  <section class="section" id="services">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <p class="section-kicker">03 &mdash; Services</p>
+        <h2 class="section-title">What I can help with</h2>
+      </header>
+
+      <div class="service-grid">
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+          <h3>Web Development</h3>
+          <p>Websites and web apps of all shapes, using HTML, CSS, Bootstrap, Tailwind CSS, React, AngularJS, Vue, Express and Ruby on Rails, backed by SQL, MongoDB or PostgreSQL.</p>
+        </article>
+
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg></span>
+          <h3>Mobile Development</h3>
+          <p>Android applications built with Kotlin, Java and Flutter, wired up to RESTful APIs.</p>
+        </article>
+
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-desktop"/></svg></span>
+          <h3>Desktop Development</h3>
+          <p>Desktop software using C# on the .NET Framework and .NET Core, with SQL Server behind it.</p>
+        </article>
+
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
+          <h3>Computer Hardware</h3>
+          <p>Solid working knowledge of PC hardware. I'm no specialist, but I can diagnose and repair most common faults.</p>
+        </article>
+
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span>
+          <h3>Arduino, Raspberry Pi &amp; Orange Pi</h3>
+          <p>Bots and Android integrations on Arduino &mdash; sumobots, line followers, and a realtime arcade game driven from a phone. I've also imaged operating systems onto RPi and OPi boards for piso WiFi vending machines.</p>
+        </article>
+
+        <article class="card service-card" data-reveal data-spotlight>
+          <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg></span>
+          <h3>Routing &amp; Switching</h3>
+          <p>Configuring routers and switches, IP addressing and network troubleshooting, backed by coursework taken throughout my degree.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Work ───────────────────────── -->
+  <section class="section section-alt" id="work">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <p class="section-kicker">04 &mdash; Work</p>
+        <h2 class="section-title">Selected projects</h2>
+        <p class="section-sub">The company products I build and maintain.</p>
+      </header>
+
+      <div class="work-grid">
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/flarego.png" width="76" height="181" loading="lazy" decoding="async" alt="Flarego Technologies logo"></span>
+            <div>
+              <h3>Flarego Technologies Corp.</h3>
+              <p class="work-meta">Company website</p>
+            </div>
+          </div>
+          <p class="work-desc">The official website of our company, which I built from scratch in Ruby on Rails.</p>
+          <ul class="pills pills-sm"><li>Ruby on Rails</li><li>PostgreSQL</li></ul>
+          <a class="work-link" href="https://flarego.ph/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>flarego.ph</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/dafoxtech.png" width="96" height="96" loading="lazy" decoding="async" alt="Dafoxtech logo"></span>
+            <div>
+              <h3>Dafoxtech Eloading System</h3>
+              <p class="work-meta">E-loading platform</p>
+            </div>
+          </div>
+          <p class="work-desc">Another of our company products, this one an e-loading system. I built the frontend from scratch in Ruby on Rails.</p>
+          <ul class="pills pills-sm"><li>Ruby on Rails</li><li>Frontend</li></ul>
+          <a class="work-link" href="https://dafoxtech.com/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>dafoxtech.com</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/adopisoft.png" width="96" height="96" loading="lazy" decoding="async" alt="Adopisoft logo"></span>
+            <div>
+              <h3>Adopisoft</h3>
+              <p class="work-meta">Company website</p>
+            </div>
+          </div>
+          <p class="work-desc">The official website for Adopisoft, our hotspot and piso WiFi billing platform.</p>
+          <a class="work-link" href="https://adopisoft.com/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>adopisoft.com</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/adopisoft.png" width="96" height="96" loading="lazy" decoding="async" alt="AdoPiSoft logo"></span>
+            <div>
+              <h3>AdoPiSoft Manager</h3>
+              <p class="work-meta">Management dashboard</p>
+            </div>
+          </div>
+          <p class="work-desc">The central management portal for AdoPiSoft operators, used to administer hotspot servers and accounts.</p>
+          <a class="work-link" href="https://manager.adopisoft.com" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>manager.adopisoft.com</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/flarewifi.svg" width="96" height="96" loading="lazy" decoding="async" alt="Flarewifi logo"></span>
+            <div>
+              <h3>Flarewifi</h3>
+              <p class="work-meta">Hotspot platform</p>
+            </div>
+          </div>
+          <p class="work-desc">A customisable, extendable WiFi hotspot platform. Businesses run and grow their hotspot with plugins from the Flarewifi Marketplace.</p>
+          <a class="work-link" href="https://flarewifi.com/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>flarewifi.com</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/flarehotspot.png" width="96" height="96" loading="lazy" decoding="async" alt="Phone Rental Manager logo"></span>
+            <div>
+              <h3>Phone Rental Manager</h3>
+              <p class="work-meta">Rental dashboard</p>
+            </div>
+          </div>
+          <p class="work-desc">A dashboard for running a phone rental business &mdash; rentals, inventory and customer records in one place.</p>
+          <a class="work-link" href="https://rentals.flarehotspot.com/" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>rentals.flarehotspot.com</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Contact ───────────────────────── -->
+  <section class="section" id="contact">
+    <div class="shell">
+      <header class="section-head" data-reveal>
+        <p class="section-kicker">05 &mdash; Contact</p>
+        <h2 class="section-title">Drop me a message</h2>
+        <p class="section-sub">Have a project in mind? Tell me about it and I'll get back to you.</p>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-aside" data-reveal>
+          <a class="card contact-line" href="mailto:lenteria.jonel@gmail.com" data-spotlight>
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+            <span><strong>Email</strong>lenteria.jonel@gmail.com</span>
+          </a>
+          <a class="card contact-line" href="tel:+639762023455" data-spotlight>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <span><strong>Phone</strong>0976 202 3455</span>
+          </a>
+          <div class="card contact-line" data-spotlight>
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            <span><strong>Based in</strong>Consolacion, Cebu, Philippines</span>
+          </div>
+        </div>
+
+        <form class="card contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-reveal>
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp"><label>Don't fill this out <input name="bot-field"></label></p>
+
+          <div class="field">
+            <input id="f-name" type="text" name="name" placeholder=" " autocomplete="name" required>
+            <label for="f-name">Name</label>
+          </div>
+          <div class="field">
+            <input id="f-mail" type="email" name="mail" placeholder=" " autocomplete="email" required>
+            <label for="f-mail">Email</label>
+          </div>
+          <div class="field field-full">
+            <input id="f-subject" type="text" name="subject" placeholder=" " required>
+            <label for="f-subject">Subject</label>
+          </div>
+          <div class="field field-full">
+            <textarea id="f-message" name="message" rows="6" placeholder=" " required></textarea>
+            <label for="f-message">Your message</label>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">
+            Send message
+            <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── CTA ───────────────────────── -->
+  <section class="cta">
+    <div class="shell cta-inner" data-reveal>
+      <p class="cta-kicker">I'm available for freelance projects</p>
+      <h2 class="cta-title">Let's build something together.</h2>
+      <a class="btn btn-primary btn-lg" href="#contact">
+        Get a quote
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">JL</span>
+      <span class="brand-text">Jonel<span class="brand-dot">.</span></span>
+    </a>
+    <p class="footer-note">&copy; <span data-year>2026</span> Jonel Lenteria &mdash; designed &amp; built by me.</p>
+    <ul class="socials socials-sm">
+      <li><a href="https://github.com/jlenteria" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/jonel-lenteria-6068a3141/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+    </ul>
+  </div>
+</footer>
+
 </body>
 </html>
-
-
