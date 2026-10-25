@@ -898,7 +898,17 @@ button { font: inherit; color: inherit; }
 }
 
 .contact-form .btn { grid-column: 1 / -1; }
+.contact-form .btn:disabled { opacity: 0.6; cursor: progress; }
 .hp { position: absolute; left: -9999px; }
+
+.form-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+.form-status:empty { display: none; }
+.form-status.is-error { color: var(--accent); }
 
 /* ---------- 14. CTA + footer ---------- */
 

@@ -366,7 +366,7 @@
       <header class="section-head" data-reveal>
         <p class="section-kicker">04 &mdash; Work</p>
         <h2 class="section-title">Selected projects</h2>
-        <p class="section-sub">The company products I build and maintain.</p>
+        <p class="section-sub">The company products and personal apps I build and maintain.</p>
       </header>
 
       <div class="work-grid">
@@ -469,6 +469,23 @@
           </a>
         </article>
 
+        <article class="card work-card" data-reveal data-spotlight>
+          <div class="work-top">
+            <span class="work-thumb"><img src="img/opt/wakeguard.png" width="96" height="96" loading="lazy" decoding="async" alt="WakeGuard logo"></span>
+            <div>
+              <h3>WakeGuard</h3>
+              <p class="work-meta">Android alarm app</p>
+            </div>
+          </div>
+          <p class="work-desc">An offline alarm clock for people who fall back asleep &mdash; the alarm only stops once you complete a wake challenge. No ads, no accounts, and the camera is used only while a challenge is on screen.</p>
+          <ul class="pills pills-sm"><li>Flutter</li><li>Dart</li><li>Android</li></ul>
+          <a class="work-link" href="wakeguard-privacy.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg>
+            <span>Privacy policy</span>
+            <svg class="icon icon-out" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
       </div>
     </div>
   </section>
@@ -498,8 +515,7 @@
           </div>
         </div>
 
-        <form class="card contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-reveal>
-          <input type="hidden" name="form-name" value="contact">
+        <form class="card contact-form" name="contact" method="POST" action="/api/contact" data-contact-form data-reveal>
           <p class="hp"><label>Don't fill this out <input name="bot-field"></label></p>
 
           <div class="field">
@@ -520,9 +536,10 @@
           </div>
 
           <button class="btn btn-primary btn-block" type="submit">
-            Send message
+            <span data-contact-label>Send message</span>
             <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
           </button>
+          <p class="form-status" data-contact-status role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>

@@ -1,0 +1,21 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jonel T. Lenteria's personal website with a Resend-powered contact form",
+  "type": "module",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --env-file=.env --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "resend": "^6.34.1"
+  }
+}

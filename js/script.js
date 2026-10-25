@@ -290,6 +290,59 @@
     });
   }());
 
+  /* ---------- Contact form ---------- */
+
+  (function contact() {
+    var form = $('[data-contact-form]');
+    if (!form || !window.fetch) return;
+
+    var btn = $('button[type="submit"]', form);
+    var label = $('[data-contact-label]', form);
+    var status = $('[data-contact-status]', form);
+    var idle = label ? label.textContent : '';
+
+    function setStatus(text, isError) {
+      status.textContent = text;
+      status.classList.toggle('is-error', !!isError);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      var data = {};
+      new FormData(form).forEach(function (value, key) { data[key] = value; });
+
+      btn.disabled = true;
+      if (label) label.textContent = 'Sending…';
+      setStatus('');
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (body) {
+            if (!res.ok || !body.ok) throw new Error(body.error || 'Something went wrong. Please try again.');
+          });
+        })
+        .then(function () {
+          form.reset();
+          setStatus("Thanks! Your message is on its way — I'll get back to you soon.");
+        })
+        .catch(function (err) {
+          setStatus(err && err.message && err.message !== 'Failed to fetch'
+            ? err.message
+            : 'Network error. Please try again, or email me directly.', true);
+        })
+        .then(function () {
+          btn.disabled = false;
+          if (label) label.textContent = idle;
+        });
+    });
+  }());
+
   /* ---------- Footer year ---------- */
 
   (function year() {
