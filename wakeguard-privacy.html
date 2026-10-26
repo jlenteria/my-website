@@ -221,7 +221,27 @@
     gap: 12px;
     justify-content: space-between;
   }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  .doc-head { animation: docIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .meta { animation: docIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both; }
+  @keyframes docIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  html.theme-switching * { transition: none !important; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+  ::view-transition-old(root) { z-index: 1; }
+  ::view-transition-new(root) {
+    z-index: 2;
+    animation: themeReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes themeReveal {
+    from { clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 50%)); }
+    to { clip-path: circle(var(--vt-r, 150vmax) at var(--vt-x, 50%) var(--vt-y, 50%)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -308,7 +328,39 @@
     btn.addEventListener('click', function () {
       var next = root.dataset.theme === 'light' ? 'dark' : 'light';
       try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
-      paint(next);
+
+      if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        paint(next);
+        return;
+      }
+
+      var box = btn.getBoundingClientRect();
+      var x = box.left + box.width / 2;
+      var y = box.top + box.height / 2;
+      var radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      root.style.setProperty('--vt-x', x + 'px');
+      root.style.setProperty('--vt-y', y + 'px');
+      root.style.setProperty('--vt-r', radius + 'px');
+      root.classList.add('theme-switching');
+
+      var transition;
+      try {
+        transition = document.startViewTransition(function () { paint(next); });
+      } catch (e) {
+        root.classList.remove('theme-switching');
+        paint(next);
+        return;
+      }
+
+      transition.finished.then(function () {
+        root.classList.remove('theme-switching');
+      }, function () {
+        root.classList.remove('theme-switching');
+      });
     });
   })();
 </script>

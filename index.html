@@ -69,6 +69,7 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+<div class="ember-cursor" data-ember aria-hidden="true"></div>
 
 <!-- Icon sprite — inlined so icons cost zero requests. -->
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -156,15 +157,17 @@
         <span>Available for freelance work</span>
       </div>
 
-      <div class="avatar-wrap anim-in" style="--i:1">
-        <div class="avatar-ring" aria-hidden="true"></div>
-        <div class="avatar">
-          <img src="img/opt/avatar-440.jpg" srcset="img/opt/avatar-440.jpg 1x, img/opt/avatar-880.jpg 2x" width="440" height="440" alt="Portrait of Jonel Lenteria" fetchpriority="high" decoding="async">
+      <div class="avatar-float">
+        <div class="avatar-wrap anim-in" style="--i:1">
+          <div class="avatar-ring" aria-hidden="true"></div>
+          <div class="avatar">
+            <img src="img/opt/avatar-440.jpg" srcset="img/opt/avatar-440.jpg 1x, img/opt/avatar-880.jpg 2x" width="440" height="440" alt="Portrait of Jonel Lenteria" fetchpriority="high" decoding="async">
+          </div>
+          <span class="avatar-badge">
+            <svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg>
+            CEBU, PH
+          </span>
         </div>
-        <span class="avatar-badge">
-          <svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg>
-          CEBU, PH
-        </span>
       </div>
 
       <h1 class="hero-title anim-in" style="--i:2">
@@ -234,7 +237,7 @@
       </header>
 
       <div class="about-grid">
-        <div class="card about-story" data-reveal data-spotlight>
+        <div class="card about-story" data-reveal="left" data-spotlight>
           <p>
             I'm a Computer Engineering graduate of the University of Cebu — Banilad campus. I'm originally from Bohol and now based in Cebu, where I've been working as a fullstack developer since 2020.
           </p>
@@ -268,35 +271,35 @@
         </div>
 
         <div class="about-meta">
-          <a class="card meta-card" href="mailto:lenteria.jonel@gmail.com" data-reveal data-spotlight>
+          <a class="card meta-card" href="mailto:lenteria.jonel@gmail.com" data-reveal="right" data-spotlight>
             <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
             <span class="meta-body">
               <span class="meta-label">Email</span>
               <span class="meta-value truncate">lenteria.jonel@gmail.com</span>
             </span>
           </a>
-          <div class="card meta-card" data-reveal data-spotlight>
+          <div class="card meta-card" data-reveal="right" data-spotlight>
             <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
             <span class="meta-body">
               <span class="meta-label">Location</span>
               <span class="meta-value">Brgy. Jugan, Consolacion, Cebu 6000</span>
             </span>
           </div>
-          <a class="card meta-card" href="tel:+639762023455" data-reveal data-spotlight>
+          <a class="card meta-card" href="tel:+639762023455" data-reveal="right" data-spotlight>
             <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
             <span class="meta-body">
               <span class="meta-label">Phone</span>
               <span class="meta-value">0976 202 3455</span>
             </span>
           </a>
-          <div class="card meta-card" data-reveal data-spotlight>
+          <div class="card meta-card" data-reveal="right" data-spotlight>
             <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
             <span class="meta-body">
               <span class="meta-label">Born</span>
               <span class="meta-value">March 6, 1998</span>
             </span>
           </div>
-          <a class="card meta-card" href="https://github.com/jlenteria" target="_blank" rel="noopener" data-reveal data-spotlight>
+          <a class="card meta-card" href="https://github.com/jlenteria" target="_blank" rel="noopener" data-reveal="right" data-spotlight>
             <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg></span>
             <span class="meta-body">
               <span class="meta-label">GitHub</span>
@@ -444,42 +447,42 @@
       </header>
 
       <div class="grid-3">
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-primary"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
           <h3>Web Development</h3>
           <p class="muted">Websites and web apps of all shapes, using HTML, CSS, Bootstrap, Tailwind CSS, React, AngularJS, Vue, Express and Ruby on Rails, backed by SQL, MongoDB or PostgreSQL.</p>
           <span class="card-tag tint-text-primary">Full production lifecycle</span>
         </article>
 
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-secondary"><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg></span>
           <h3>Mobile Development</h3>
           <p class="muted">Android applications built with Kotlin, Java and Flutter, wired up to RESTful APIs.</p>
           <span class="card-tag tint-text-secondary">Offline-first &amp; realtime sync</span>
         </article>
 
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-tertiary"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
           <h3>Desktop Development</h3>
           <p class="muted">Desktop software using C# on the .NET Framework and .NET Core, with SQL Server behind it.</p>
           <span class="card-tag tint-text-tertiary">Enterprise runtimes</span>
         </article>
 
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-neutral"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span>
           <h3>Computer Hardware</h3>
           <p class="muted">Solid working knowledge of PC hardware. I'm no specialist, but I can diagnose and repair most common faults.</p>
           <span class="card-tag tint-text-neutral">Diagnostics &amp; tuning</span>
         </article>
 
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-secondary"><svg class="icon" aria-hidden="true"><use href="#i-chip"/></svg></span>
           <h3>Arduino, Raspberry Pi &amp; Orange Pi</h3>
           <p class="muted">Bots and Android integrations on Arduino — sumobots, line followers, and a realtime arcade game driven from a phone. I've also imaged operating systems onto RPi and OPi boards for piso WiFi vending machines.</p>
           <span class="card-tag tint-text-secondary">Custom firmware &amp; OS imaging</span>
         </article>
 
-        <article class="card service-card" data-reveal data-spotlight>
+        <article class="card service-card" data-reveal="scale" data-spotlight>
           <span class="icon-badge icon-badge-lg tint-green"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span>
           <h3>Routing &amp; Switching</h3>
           <p class="muted">Configuring routers and switches, IP addressing and network troubleshooting, backed by coursework taken throughout my degree.</p>
@@ -688,7 +691,7 @@
 
       <div class="contact-grid">
         <div class="contact-aside">
-          <a class="card contact-line" href="mailto:lenteria.jonel@gmail.com" data-reveal data-spotlight>
+          <a class="card contact-line" href="mailto:lenteria.jonel@gmail.com" data-reveal="left" data-spotlight>
             <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
             <span class="contact-body">
               <span class="meta-label">Email</span>
@@ -696,7 +699,7 @@
             </span>
           </a>
 
-          <a class="card contact-line" href="tel:+639762023455" data-reveal data-spotlight>
+          <a class="card contact-line" href="tel:+639762023455" data-reveal="left" data-spotlight>
             <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
             <span class="contact-body">
               <span class="meta-label">Phone</span>
@@ -704,7 +707,7 @@
             </span>
           </a>
 
-          <div class="card contact-line" data-reveal data-spotlight>
+          <div class="card contact-line" data-reveal="left" data-spotlight>
             <span class="contact-icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
             <span class="contact-body">
               <span class="meta-label">Based in</span>
@@ -712,7 +715,7 @@
             </span>
           </div>
 
-          <div class="cta-card" data-reveal>
+          <div class="cta-card" data-reveal="left">
             <span class="cta-kicker">I'm available for freelance projects</span>
             <h3>Let's build something together.</h3>
             <a class="btn btn-primary btn-sm" href="#contact">
@@ -722,7 +725,7 @@
           </div>
         </div>
 
-        <form class="card contact-form" name="contact" method="POST" action="/api/contact" data-contact-form data-reveal>
+        <form class="card contact-form" name="contact" method="POST" action="/api/contact" data-contact-form data-reveal="right">
           <p class="hp"><label>Don't fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
           <div class="form-row">
@@ -763,7 +766,7 @@
 <footer class="site-footer">
   <div class="shell">
     <div class="footer-grid">
-      <div class="footer-brand">
+      <div class="footer-brand" data-reveal>
         <div class="brand">
           <span class="brand-mark" aria-hidden="true">JL</span>
           <span class="brand-name">Jonel<span class="brand-dot">.</span></span>
@@ -775,7 +778,7 @@
         </div>
       </div>
 
-      <nav class="footer-col" aria-label="Footer">
+      <nav class="footer-col" aria-label="Footer" data-reveal>
         <span class="footer-title">Navigation</span>
         <div class="footer-links">
           <a href="#top">Home</a>
@@ -787,7 +790,7 @@
         </div>
       </nav>
 
-      <div class="footer-col">
+      <div class="footer-col" data-reveal>
         <span class="footer-title">Channels</span>
         <div class="footer-links footer-links-stack">
           <a href="https://github.com/jlenteria" target="_blank" rel="noopener">

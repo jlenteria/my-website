@@ -191,6 +191,58 @@
     }, { passive: true });
   }());
 
+  /* ---------- Ember cursor ---------- */
+
+  (function emberCursor() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var el = $('[data-ember]');
+    if (!el) return;
+
+    var targetX = 0;
+    var targetY = 0;
+    var currentX = 0;
+    var currentY = 0;
+    var frame = null;
+    var visible = false;
+
+    function loop() {
+      currentX += (targetX - currentX) * 0.14;
+      currentY += (targetY - currentY) * 0.14;
+      el.style.transform = 'translate3d(' + currentX + 'px,' + currentY + 'px,0)';
+
+      if (Math.abs(targetX - currentX) > 0.4 || Math.abs(targetY - currentY) > 0.4) {
+        frame = requestAnimationFrame(loop);
+      } else {
+        frame = null;
+      }
+    }
+
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse' || reduced) return;
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (!visible) {
+        visible = true;
+        currentX = targetX;
+        currentY = targetY;
+        el.classList.add('is-on');
+      }
+      if (!frame) frame = requestAnimationFrame(loop);
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function () {
+      visible = false;
+      el.classList.remove('is-on');
+    });
+
+    motionQuery.addEventListener('change', function (e) {
+      if (e.matches) {
+        visible = false;
+        el.classList.remove('is-on');
+      }
+    });
+  }());
+
   /* ---------- Count-up stats ---------- */
 
   (function counters() {
@@ -303,8 +355,36 @@
     btn.addEventListener('click', function () {
       var next = root.dataset.theme === 'light' ? 'dark' : 'light';
       try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+
       if (reduced || !document.startViewTransition) { paint(next); return; }
-      document.startViewTransition(function () { paint(next); });
+
+      var box = btn.getBoundingClientRect();
+      var x = box.left + box.width / 2;
+      var y = box.top + box.height / 2;
+      var radius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      root.style.setProperty('--vt-x', x + 'px');
+      root.style.setProperty('--vt-y', y + 'px');
+      root.style.setProperty('--vt-r', radius + 'px');
+      root.classList.add('theme-switching');
+
+      var transition;
+      try {
+        transition = document.startViewTransition(function () { paint(next); });
+      } catch (e) {
+        root.classList.remove('theme-switching');
+        paint(next);
+        return;
+      }
+
+      transition.finished.then(function () {
+        root.classList.remove('theme-switching');
+      }, function () {
+        root.classList.remove('theme-switching');
+      });
     });
   }());
 
