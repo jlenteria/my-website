@@ -1,4 +1,5 @@
-# Resend API key — https://resend.com/api-keys
+# Copy to .dev.vars for local development (`npm run dev`).
+# For production, set RESEND_API_KEY with `npx wrangler secret put RESEND_API_KEY`.
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
 
 # Where contact form messages are delivered (comma-separate for several)
@@ -8,6 +9,4 @@ CONTACT_TO_EMAIL=jlenteria98@gmail.com
 # Resend then only delivers to your own Resend account email, so sign up to
 # Resend with the same address as CONTACT_TO_EMAIL.
 # Once you own and verify a domain in Resend, switch to e.g. contact@yourdomain.com
-CONTACT_FROM_EMAIL=Portfolio Contact <onboarding@resend.dev>
-
-PORT=3000
+CONTACT_FROM_EMAIL="Portfolio Contact <onboarding@resend.dev>"
