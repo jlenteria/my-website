@@ -1,5 +1,6 @@
 # Copy to .dev.vars for local development (`npm run dev`).
-# For production, set RESEND_API_KEY with `npx wrangler secret put RESEND_API_KEY`.
+# For production, set each value with
+# `npx wrangler pages secret put <NAME> --project-name jlenteria`, then redeploy.
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
 
 # Where contact form messages are delivered (comma-separate for several)

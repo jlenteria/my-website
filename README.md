@@ -3,21 +3,20 @@
 The source for my personal website: a fast, static portfolio built with plain
 HTML, CSS, and JavaScript and served from Cloudflare's edge.
 
-**URL:** https://www.jlenteria.workers.dev
+**URL:** https://jlenteria.pages.dev
 
 ## Stack
 
 - HTML, CSS, and vanilla JavaScript
-- Cloudflare Workers — static assets plus a small contact-form API
+- Cloudflare Pages — static assets plus Pages Functions for the contact form
 - [Resend](https://resend.com) for email delivery
 
 ## Structure
 
 | Path | Purpose |
 | --- | --- |
-| `public/` | Pages, styles, scripts, and images |
-| `src/worker.js` | Contact endpoint (`POST /api/contact`) |
-| `wrangler.jsonc` | Cloudflare Workers configuration |
+| `public/` | HTML pages, styles, scripts, and images |
+| `functions/` | Pages Functions — `api/contact.js`, `healthz.js`, and the shared contact logic in `_shared/` |
 
 ## Development
 
@@ -33,8 +32,15 @@ email locally.
 ## Deploy
 
 ```bash
-npx wrangler secret put RESEND_API_KEY
+npx wrangler pages secret put RESEND_API_KEY    --project-name jlenteria
+npx wrangler pages secret put CONTACT_TO_EMAIL  --project-name jlenteria
+npx wrangler pages secret put CONTACT_FROM_EMAIL --project-name jlenteria
 npm run deploy
 ```
 
-Static-file headers live in `public/_headers`.
+Secrets are captured by a deployment, so change one and redeploy. Static-file
+headers live in `public/_headers`.
+
+The contact form is guarded by a honeypot and field validation. Cloudflare's
+rate-limiting binding is not available on Pages, so there is no per-IP throttle;
+add a KV binding or Turnstile if one is needed.

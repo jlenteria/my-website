@@ -8,7 +8,7 @@ const escapeHtml = (s) => s.replace(/[&<>"']/g, (c) => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
 ));
 
-const json = (status, payload, headers = {}) => new Response(JSON.stringify(payload), {
+export const json = (status, payload, headers = {}) => new Response(JSON.stringify(payload), {
   status,
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
@@ -64,7 +64,7 @@ async function readBody(request) {
   return { status: 415, error: 'Unsupported content type.' };
 }
 
-async function handleContact(request, env) {
+export async function handleContact(request, env) {
   const contentType = request.headers.get('Content-Type') || '';
   // The browser fetch sends JSON; a no-JS form post is urlencoded.
   const wantsJson = contentType.includes('application/json');
@@ -88,13 +88,6 @@ async function handleContact(request, env) {
   if (!env.RESEND_API_KEY || !env.CONTACT_TO_EMAIL || !env.CONTACT_FROM_EMAIL) {
     console.error('Contact form is missing RESEND_API_KEY, CONTACT_TO_EMAIL or CONTACT_FROM_EMAIL.');
     return reply(503, { ok: false, error: 'Email is not configured yet. Please email me directly.' });
-  }
-
-  // Checked only for real submissions, so a typo doesn't use up the allowance.
-  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const { success } = await env.CONTACT_RATE_LIMITER.limit({ key: `contact:${ip}` });
-  if (!success) {
-    return reply(429, { ok: false, error: 'Too many messages. Please try again later.' });
   }
 
   const { name, mail, subject, message } = data;
@@ -133,26 +126,3 @@ async function handleContact(request, env) {
 
   return reply(200, { ok: true });
 }
-
-export default {
-  async fetch(request, env) {
-    const { pathname } = new URL(request.url);
-
-    if (pathname === '/api/contact') {
-      if (request.method !== 'POST') {
-        return json(405, { ok: false, error: 'Method not allowed.' }, { Allow: 'POST' });
-      }
-      return handleContact(request, env);
-    }
-
-    if (pathname === '/healthz') {
-      return json(200, { ok: true });
-    }
-
-    if (pathname.startsWith('/api/')) {
-      return json(404, { ok: false, error: 'Not found.' });
-    }
-
-    return env.ASSETS.fetch(request);
-  },
-};

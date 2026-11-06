@@ -2,15 +2,15 @@
   "name": "my-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Jonel T. Lenteria's personal website with a Resend-powered contact form, deployed on Cloudflare Workers",
+  "description": "Jonel T. Lenteria's personal website with a Resend-powered contact form, deployed on Cloudflare Pages",
   "type": "module",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "tail": "wrangler tail"
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name jlenteria",
+    "tail": "wrangler pages deployment tail --project-name jlenteria"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
